@@ -6,13 +6,7 @@
 ```r
 #Loading necessary libraries
 library(ggplot2)
-```
 
-```
-## Warning: package 'ggplot2' was built under R version 3.1.2
-```
-
-```r
 #Reading activity file
 activity_data <- read.csv("activity.csv")
 
@@ -35,7 +29,7 @@ qplot(x=date, y=steps, data=activity_data, stat='summary',
 ## Warning: Removed 2304 rows containing missing values (stat_summary).
 ```
 
-![plot of chunk unnamed-chunk-2](./PA1_template_files/figure-html/unnamed-chunk-2.png) 
+![](./PA1_template_files/figure-html/unnamed-chunk-2-1.png) 
 
 2.) Calculate and report the mean and median total number of steps taken per day
 
@@ -64,7 +58,7 @@ ggplot(data=activity_byInterval, aes(x=interval, y=steps)) +
   ggtitle("Figure 2: Mean number of steps taken by interval")
 ```
 
-![plot of chunk unnamed-chunk-4](./PA1_template_files/figure-html/unnamed-chunk-4.png) 
+![](./PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
 
 2.) Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -122,7 +116,7 @@ qplot(x=date, y=steps, data=complete_activity_data, stat='summary',
   ggtitle("Figure 3: Total number of steps taken by day after imputing NAs")
 ```
 
-![plot of chunk unnamed-chunk-8](./PA1_template_files/figure-html/unnamed-chunk-8.png) 
+![](./PA1_template_files/figure-html/unnamed-chunk-8-1.png) 
 
 ```r
 #Create a dataset containing data agregated by day (sum of steps by date)
@@ -139,7 +133,7 @@ There's some difference between now and before we filled all the NAs. The mean c
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
-1.) Create a new factor variable in the dataset with two levels  weekday and weekend indicating whether a given date is a weekday or weekend day.
+1.) Create a new factor variable in the dataset with two levels – “weekday” and “weekend” indicating whether a given date is a weekday or weekend day.
 
 ```r
 #function translating weekday's name to "weekday" or "weekend"
@@ -171,4 +165,4 @@ ggplot(data=complete_activity_byInterval, aes(x=interval, y=steps))+
   ggtitle("Figure 4: Mean number of steps taken by interval and by period of the week")
 ```
 
-![plot of chunk unnamed-chunk-10](./PA1_template_files/figure-html/unnamed-chunk-10.png) 
+![](./PA1_template_files/figure-html/unnamed-chunk-10-1.png) 
